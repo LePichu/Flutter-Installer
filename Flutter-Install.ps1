@@ -1,3 +1,6 @@
+# System Related
+$GLOBAL:ProgressPreference = 'SilentlyContinue'
+
 # Flutter Related
 $FLUTTER_PATH = "C:/Program Files/Flutter/"
 $FLUTTER_FNAME = "flutter_windows_" 
@@ -24,7 +27,6 @@ if (Test-Path -Path $FLUTTER_PATH) {} else { mkdir $FLUTTER_PATH }
 # Download
 Write-Output "$(Write-PrecursorText) Downloading Flutter!"
 try {
-    $ProgressPreference = 'SilentlyContinue' 
     Invoke-WebRequest -Uri "https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/$FLUTTER_VER.zip" -OutFile "$FLUTTER_PATH/$FLUTTER_VER.zip"
 } catch {
     Write-Host ">> " -NoNewLine -ForegroundColor Red
@@ -35,7 +37,6 @@ try {
 
 # Extract
 Write-Output "$(Write-PrecursorText) Extracting Flutter!"
-$ProgressPreference = 'SilentlyContinue'
 Expand-Archive -Path "$FLUTTER_PATH/$FLUTTER_VER.zip" -DestinationPath "$FLUTTER_PATH"
 
 # Install
