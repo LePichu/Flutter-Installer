@@ -1,4 +1,4 @@
-![Flutter Installer for Windows](https://github.com/LePichu/Flutter-Installer/blob/master/Flutter-Installer.png?raw=true)
+![Flutter Installer for Windows](./Flutter-Installer.png)
 
 # Flutter Installer
 This is a PowerShell script intended to install Flutter (alongside Dart) on a Windows machine. 
