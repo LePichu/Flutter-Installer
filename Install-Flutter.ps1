@@ -41,7 +41,6 @@ try
 
 # Extract
 Write-Output "$(Write-PrecursorText) Extracting Flutter!"
-try { Remove-Item -Path $FLUTTER_PATH/$FLUTTER_VER -Recurse -Force } catch {}
 Expand-Archive -Path "$FLUTTER_PATH/$FLUTTER_VER.zip" -DestinationPath "$FLUTTER_PATH"
 
 # Install
@@ -57,3 +56,4 @@ if (-not $($OLD_PATH -Contains "%FLUTTER_PATH%"))
 
 # Finish
 Write-Output "$(Write-PrecursorText) Flutter has been installed! Please restart your terminal for the changes to take effect. Happy Fluttering! 🐦"
+
